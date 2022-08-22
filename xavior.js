@@ -90,11 +90,11 @@ module.exports = xavior = async (xavior, m, chatUpdate, store) => {
 	    if (!('anticall' in setting)) setting.anticall = true
 		if (!isNumber(setting.status)) setting.status = 0
 		if (!('autobio' in setting)) setting.autobio = false
-		if (!('templateImage' in setting)) setting.templateImage = true
+		if (!('templateImage' in setting)) setting.templateImage = false
 		if (!('templateVideo' in setting)) setting.templateVideo = false
 		if (!('templateGif' in setting)) setting.templateGif = false
 		if (!('templateMsg' in setting)) setting.templateMsg = false
-		if (!('templateLocation' in setting)) setting.templateLocation = false
+		if (!('templateLocation' in setting)) setting.templateLocation = true
 	    } else global.db.data.settings[botNumber] = {
 	    anticall: true,
 		status: 0,
@@ -534,16 +534,19 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             break
 	    case 'donasi': case 'sewabot': case 'sewa': case 'buypremium': case 'donate': {
   goblok = fs.readFileSync('./video/ga.jpg')
-                xavior.sendMessage(m.chat, { image: goblok, caption: `┌──⭓ *Sewa Bot*
+                xavior.sendMessage(m.chat, { image: goblok, caption: `┌──⭓ *Sewa Bot*
+
 │⭔ 1 Minggu :10k
 │⭔ 1 Bulan :15k
 │⭔ Permanen :20k
 └───────⭓
-┌──⭓ *Jadi Bot*
+┌──⭓ *Jadi Bot*
+
 │⭔ Jasa Jadi Bot: 30k
 │⭔ Jadi Owner AzzBot: 15k
 └───────⭓
-┌──⭓ *Harga Sc Bot Wa*
+┌──⭓ *Harga Sc Bot Wa*
+
 │⭔ Versi 1 :20k
 │⭔ Versi 2 :25k
 │⭔ Free :Di Yt MBY•OFFICIAL
